@@ -30,6 +30,7 @@ body{
     font-size: 20px;
     border-radius: 10px;
     margin: 45px;
+    list-style: none;
 }
 .btn:hover{
     background-color: #236f26;
@@ -48,16 +49,37 @@ body{
     justify-content: space-between;
     background-color: gray;
     padding: 15px;
+    align-items: center;
+}
+.column-1{
+    list-style: none;
+
+}
+.column-2{
+    list-style: none;
+    margin-top: -35px;
 }
 .anchor{
     text-decoration: none;
     font-size: 20px;
     color: black;
 }
-.anchor:hover{
+.hidden{
+    display: none;
+}
+.timer{
+    margin-right: 25px;
+    font-size: 20px;
+}
+.highscore-page{
+    background-color: #aca5a5;
+    padding: 12px;
+    border-radius: 15px;
+}
+.highscore-page:hover{
+    background-color: #236f26;
+    color: rgba(255, 255, 255, 0.62);
     transition: 0.3s;
-    text-decoration: underline;
-    color: rgb(188, 39, 39);
-    
-  
+    cursor:pointer;
+
 }
