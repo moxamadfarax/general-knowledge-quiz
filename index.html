@@ -8,62 +8,76 @@
     <title>General Knowledge Quiz</title>
   </head>
   <body>
-    <nav class="nav" id="nav">
-      <div>
-        <a href="highscore.html" class="anchor"
-          ><div class="highscore-page">High Score</div></a
-        >
-      </div>
-      <div>
-        <div class="timer">
-          <span id="timer" class="timer-style">Timer 0</span>
-        </div>
-      </div>
-    </nav>
-    <div class="container" id="container">
-      <h1 class="h-1" id="h1">General Knowledge Quiz</h1>
-      <p class="p-1" id="par">
-        This quiz will test you on your general knowledge on an array of<br />
-        topics.You will have 60 seconds to complete the quiz. For every<br />
-        questions you get right, you will earn as many points as seconds
-        <br />you have left on the timer. points, but for every question<br />
-        you get wrong, your time will decrease by 3 seconds. Click the button<br />
-        below take the quiz.
-      </p>
-      <button class="btn" id="btn">Start</button>
-    </div>
-    <script src="script.js"></script>
-    <section>
-      <nav class="nav">
+    <div id="start-page">
+      <nav   class="nav" id="nav">
         <div>
-          <a href="highscore.html" class="anchor"
-            ><div class="highscore-page">High Score</div></a
-          >
+          <a href="highscore.html" class="anchor"></a>
+          <div class="highscore-page">High Score</div>
+          </a>
         </div>
-        <div class="timer">Timer 0</div>
-      </nav>
-      <section class="container">
+        <div>
+        <div class="timer">
+          <span class="timer-style">Timer 60</span>
+        </div>
+        </div>
+    </nav>
+      <div class="container" id="container">
+        <h1 class="h-1" id="h1">General Knowledge Quiz</h1>
+        <p class="p-1" id="par">
+          This quiz will test you on your general knowledge on an array of
+          <br />
+          topics.You will have 60 seconds to complete the quiz. For every
+          <br />
+          questions you get right, you will earn as many points as seconds
+          <br />
+          you have left on the timer. points, but for every question
+          <br />
+          you get wrong, your time will decrease by 3 seconds. Click the button
+          <br />
+          below take the quiz.
+        </p>
+        <button class=" btn" id="start-btn">Start</button>
+      </div>
+        <br />
+        <br />
+       <br />
+    </div>
+    <section id="questions"  >
+      <div>
+        <nav class="nav">
+          <div>
+            <a href="highscore.html" class="anchor">
+              <div class="highscore-page">High Score</div>
+            </a>
+          </div>
+          <div class="timer"><span id="timer">Timer 60</span> </div>
+        </nav>
+      </div>
+      <div class="container">
         <h1 class="h-1">First question</h1>
         <p class="p-1">
-          Which one of these four animals are unable to jump?<br />
+          Which one of these four animals are unable to jump?
+          <br />
         </p>
         <div>
           <ul class="column-1">
             <li class="list">
-              <button class="btn">Giraffe's</button>
-              <button class="btn">Molerat's</button>
+              <button class="btn show">Giraffe</button>
+              <button class="btn show">Molerat</button>
             </li>
           </ul>
         </div>
         <div>
           <ul class="column-2">
             <li>
-              <button class="btn">Rhino's</button>
-              <button class="btn">Elephant's</button>
+              <button class="btn show">Rhino</button>
+              <button class="btn show">Elephant</button>
             </li>
           </ul>
         </div>
-      </section>
+      </div>
     </section>
+    <script src="script.js"></script>
   </body>
-</html>
+  </html>
+  
