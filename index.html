@@ -9,18 +9,17 @@
   </head>
   <body>
     <div id="start-page">
-      <nav   class="nav" id="nav">
+      <nav class="nav" id="nav">
         <div>
           <a href="highscore.html" class="anchor"></a>
           <div class="highscore-page">High Score</div>
-          </a>
         </div>
         <div>
-        <div class="timer">
-          <span class="timer-style">Timer 60</span>
+          <div class="timer">
+            <span class="timer-style">Timer 60</span>
+          </div>
         </div>
-        </div>
-    </nav>
+      </nav>
       <div class="container" id="container">
         <h1 class="h-1" id="h1">General Knowledge Quiz</h1>
         <p class="p-1" id="par">
@@ -36,13 +35,13 @@
           <br />
           below take the quiz.
         </p>
-        <button class=" btn" id="start-btn">Start</button>
+        <button class="btn" id="start-btn">Start</button>
       </div>
-        <br />
-        <br />
-       <br />
+      <br />
+      <br />
+      <br />
     </div>
-    <section id="questions"  >
+    <section id="questions" class="hidden">
       <div>
         <nav class="nav">
           <div>
@@ -50,28 +49,36 @@
               <div class="highscore-page">High Score</div>
             </a>
           </div>
-          <div class="timer"><span id="timer">Timer 60</span> </div>
+          <div class="timer"><span id="timer">Timer 60</span></div>
         </nav>
       </div>
       <div class="container">
         <h1 class="h-1">First question</h1>
-        <p class="p-1">
+        <p class="p-1" id="p-1">
           Which one of these four animals are unable to jump?
           <br />
         </p>
         <div>
           <ul class="column-1">
             <li class="list">
-              <button class="btn show">Giraffe</button>
-              <button class="btn show">Molerat</button>
+              <button class="btn show" id="q1-w">
+                <span>Giraffe</span>
+              </button>
+              <button class="btn show" id="q2-w">
+                <span>Molerat</span>
+              </button>
             </li>
           </ul>
         </div>
         <div>
           <ul class="column-2">
             <li>
-              <button class="btn show">Rhino</button>
-              <button class="btn show">Elephant</button>
+              <button class="btn show" id="q3-w">
+                <span>Rhino</span>
+              </button>
+              <button class="btn show" id="q4-r">
+                <span>Elephant</span>
+              </button>
             </li>
           </ul>
         </div>
@@ -79,5 +86,4 @@
     </section>
     <script src="script.js"></script>
   </body>
-  </html>
-  
+</html>
