@@ -8,11 +8,11 @@
     <title>General Knowledge Quiz</title>
   </head>
   <body>
-    <div id="start-page">
+    <!--Start Page-->
+    <div id="start-page" class="">
       <nav class="nav" id="nav">
         <div>
-          <a href="highscore.html" class="anchor"></a>
-          <div class="highscore-page">High Score</div>
+          <button class="score-btn" id="score-page-btn">Highscore</button>
         </div>
         <div>
           <div class="timer">
@@ -25,15 +25,14 @@
         <p class="p-1" id="par">
           This quiz will test you on your general knowledge on an array of
           <br />
-          topics.You will have 60 seconds to complete the quiz. For every
+          topics. You will have 60 seconds to complete the quiz. Your score by
           <br />
-          questions you get right, you will earn as many points as seconds
+          the end of the quiz will equal the amount of questions you got
           <br />
-          you have left on the timer. points, but for every question
+          wrongcorrect. For every question you get incorrect, your time will
+          decrease
           <br />
-          you get wrong, your time will decrease by 3 seconds. Click the button
-          <br />
-          below take the quiz.
+          by 3 seconds. Click the button below take the quiz.
         </p>
         <button class="btn" id="start-btn">Start</button>
       </div>
@@ -41,19 +40,19 @@
       <br />
       <br />
     </div>
-    <section id="questions" class="hidden">
+    <!--Questions Page Below-->
+    <section id="questions-page" class="hidden">
       <div>
-        <nav class="nav">
+        <nav class="nav-2 nav" id="nav-2">
           <div>
-            <a href="highscore.html" class="anchor">
-              <div class="highscore-page">High Score</div>
-            </a>
+            <button class="score-btn" id="score-page-btn">Highscore</button>
           </div>
           <div class="timer"><span id="timer">Timer 60</span></div>
         </nav>
       </div>
       <div class="container">
         <h1 class="h-1">First question</h1>
+        <div id="result" class="result-w result-r"></div>
         <p class="p-1" id="p-1">
           Which one of these four animals are unable to jump?
           <br />
@@ -61,29 +60,64 @@
         <div>
           <ul class="column-1">
             <li class="list">
-              <button class="btn show" id="q1-w">
-                <span>Giraffe</span>
-              </button>
-              <button class="btn show" id="q2-w">
-                <span>Molerat</span>
-              </button>
+              <button class="btn show" id="answer1"></button>
+              <button class="btn show" id="answer2"></button>
             </li>
           </ul>
         </div>
         <div>
           <ul class="column-2">
             <li>
-              <button class="btn show" id="q3-w">
-                <span>Rhino</span>
-              </button>
-              <button class="btn show" id="q4-r">
-                <span>Elephant</span>
-              </button>
+              <button class="btn show" id="answer3"></button>
+              <button class="btn show" id="answer4"></button>
             </li>
           </ul>
         </div>
+        <div>
+          <button class="next-btn btn hidden" id="next-btn">
+            <span class="next-btn-text">Next</span>
+          </button>
+        </div>
       </div>
     </section>
-    <script src="script.js"></script>
+    <!--High Score Page-->
+    <div class="hidden" id="score-page">
+      <nav class="nav-3 nav" id="nav-3">
+        <div>
+          <button class="score-btn" id="score-page-btn">Highscore</button>
+        </div>
+        <div>
+          <div class="timer">
+            <span class="timer-style">Timer 60</span>
+          </div>
+        </div>
+      </nav>
+      <div>
+        <h1 class="h-1" id="h1">All Done!</h1>
+        <p class="p-1" id="par">Add your initials to record your score.</p>
+      </div>
+      <main>
+        <ul class="column-1">
+          <li class="">
+            <form class="form">
+              <input
+                class="form-input"
+                type="text"
+                id="form"
+                name="name"
+                placeholder="Name"
+              />
+              <input type="submit" value="Submit " class="form-btn" />
+            </form>
+          </li>
+        </ul>
+
+        <ul class="column-2">
+          <li></li>
+        </ul>
+      </main>
+    </div>
+    <script src="/js/script.js"></script>
+    <script src="questions.js"></script>
   </body>
 </html>
