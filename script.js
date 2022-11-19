@@ -15,13 +15,19 @@ var questionNumber = document.getElementById('question-number');
 var questionEl = document.getElementById('question');
 var timer = document.getElementById('timer')
 var answer = document.querySelectorAll('question-answer');
+var submitScoreBtn = document.getElementById('submit-score-btn')
+var nameInput = document.getElementById('name-input')
 
 function countDown (){
     var timeleft = 60;
     var minuteTimer = setInterval(function(){
     if(timeleft >= 0){timer.innerHTML ="Timer " + timeleft ;}
-    if(timeleft < 0){timer.innerHTML ="Time up" ;}
-    timeleft -= 1},  1000);
+    if(timeleft <= 0){
+    questionsPage.classList = 'hidden';
+    startPage.classList = 'hidden';
+    scorePage.classList = 'show';
+    }
+    timeleft -= 1},  10);
 }
 
 function nextQuestion(){
@@ -50,6 +56,7 @@ startBtn.addEventListener('click', function navQuizPage(){
 
 btn1.addEventListener('click', () => {
     nextQuestion()
+    timeleft--;
 })
 btn2.addEventListener('click', () => {
     nextQuestion()
@@ -122,5 +129,20 @@ var quizData = [
 
 ];
 
+submitScoreBtn.addEventListener('click', function(event){
+event.preventDefault
+for (var i = 0; i < todos.length; i++) {
+    var todo = todos[i];
 
+    var li = document.createElement("li");
+    li.textContent = todo;
+    li.setAttribute("data-index", i);
+
+    var button = document.createElement("button");
+    button.textContent = "Complete ✔️";
+
+    li.appendChild(button);
+    todoList.appendChild(li);
+  }
+})
 

@@ -69,11 +69,6 @@
             </li>
           </ul>
         </div>
-        <div>
-          <button class="next-btn btn hidden" id="next-btn">
-            <span class="next-btn-text">Next</span>
-          </button>
-        </div>
       </div>
     </section>
     <!--High Score Page-->
@@ -83,13 +78,12 @@
           <button class="nav-btn" id="home-page-btn">Home</button>
         </div>
         <div>
-          <div class="timer">
-            <span class="timer-style">Timer 60</span>
-          </div>
+          <div class="timer"></div>
         </div>
       </nav>
       <div>
         <h1 class="h-1" id="h1">All Done!</h1>
+        <div id="score-amount"></div>
         <p class="p-1" id="submit-btn">Add your name to record your score.</p>
       </div>
       <main>
@@ -99,21 +93,28 @@
               <input
                 class="form-input"
                 type="text"
-                id="form"
+                id="name-input"
                 name="name"
                 placeholder="Name"
               />
-              <input type="submit" value="Submit " class="form-btn" />
+              <input
+                type="submit"
+                value="Submit "
+                class="form-btn"
+                id="submit-score-btn"
+              />
             </form>
           </li>
         </ul>
+        <br />
 
-        <ul class="column-2">
-          <li></li>
-        </ul>
+        <div class="score-position">
+          <div class="score-box"></div>
+          <br />
+          <div><button class="clear-score-btn">Clear Highscore</button></div>
+        </div>
       </main>
     </div>
-    <script src="/js/script.js"></script>
-    <script src="questions.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

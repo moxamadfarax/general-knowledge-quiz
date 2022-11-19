@@ -133,16 +133,39 @@ body {
   transition: 0.3s;
   cursor: pointer;
 }
-.next-btn{
-  margin-right: 5px;
-  padding: 20px;
-  padding-right: 70px;
-  margin-top: 0px;
-  background-color: purple;
-}
-.next-btn-text{
-  margin-right: -50px;
-}
 .hidden {
   display: none;
+}
+.clear-score-btn{
+  background-color: #c23ec6;
+  border: none;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+ border-radius: 15px;
+ cursor: pointer;
+}
+.clear-score-btn:hover{
+  background-color: #a133a5;
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.score-box{
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-right: 200px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  background-color: #d7d5d5;
+  margin: 10px;
+  font-size: 30px;
+}
+.score-position{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
