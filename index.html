@@ -12,7 +12,7 @@
     <div id="start-page" class="">
       <nav class="nav" id="nav">
         <div>
-          <button class="score-btn" id="score-page-btn">Highscore</button>
+          <button class="nav-btn" id="score-page-btn">Highscore</button>
         </div>
         <div>
           <div class="timer">
@@ -21,8 +21,8 @@
         </div>
       </nav>
       <div class="container" id="container">
-        <h1 class="h-1" id="h1">General Knowledge Quiz</h1>
-        <p class="p-1" id="par">
+        <h1 class="h-1" id="">General Knowledge Quiz</h1>
+        <p class="p-1" id="">
           This quiz will test you on your general knowledge on an array of
           <br />
           topics. You will have 60 seconds to complete the quiz. Your score by
@@ -44,31 +44,28 @@
     <section id="questions-page" class="hidden">
       <div>
         <nav class="nav-2 nav" id="nav-2">
-          <div>
-            <button class="score-btn" id="score-page-btn">Highscore</button>
-          </div>
+          <div></div>
           <div class="timer"><span id="timer">Timer 60</span></div>
         </nav>
       </div>
       <div class="container">
-        <h1 class="h-1">First question</h1>
+        <h1 class="h-1" id="question-number"></h1>
         <div id="result" class="result-w result-r"></div>
-        <p class="p-1" id="p-1">
-          Which one of these four animals are unable to jump?
+        <p class="p-1" id="question">
           <br />
         </p>
         <div>
           <ul class="column-1">
             <li class="list">
-              <button class="btn show" id="answer1"></button>
-              <button class="btn show" id="answer2"></button>
+              <button class="btn" id="answer1"></button>
+              <button class="btn" id="answer2"></button>
             </li>
           </ul>
         </div>
         <div>
           <ul class="column-2">
             <li>
-              <button class="btn show" id="answer3"></button>
+              <button class="btn" id="answer3"></button>
               <button class="btn show" id="answer4"></button>
             </li>
           </ul>
@@ -84,7 +81,7 @@
     <div class="hidden" id="score-page">
       <nav class="nav-3 nav" id="nav-3">
         <div>
-          <button class="score-btn" id="score-page-btn">Highscore</button>
+          <button class="nav-btn" id="home-page-btn">Home</button>
         </div>
         <div>
           <div class="timer">
