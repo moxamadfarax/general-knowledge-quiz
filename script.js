@@ -18,6 +18,7 @@ var answer = document.querySelectorAll('quiz-answer')
 var submitScoreBtn = document.getElementById('submit-score-btn')
 var nameInput = document.getElementById('name-input')
 var timeleft = 60;
+
 var quizData = [
     {   
         questionNumber:'Question 1',
@@ -57,7 +58,6 @@ var quizData = [
     },    
     {
         questionNumber:'Question 5',
-        final: '5',
         question: 'Which of these countries is landlocked?',
         a: 'Jordan',
         b: 'Chad',
@@ -67,6 +67,7 @@ var quizData = [
     },    
 
 ]; 
+
 function countDown (){
     var minuteTimer = setInterval(function(){
         if(timeleft >= 0){timer.innerHTML ="Timer " + timeleft ;}
@@ -87,11 +88,18 @@ function nextQuestion(){
     btn3.innerHTML = currentQuizData.c
     btn4.innerHTML = currentQuizData.d
     answer = currentQuizData.correct
-    console.log(answer)
+    console.log(answer);
     currentScore++;
-    console.log(currentScore)
-    finalQuestion.value = currentQuizData.final
-};
+    console.log(currentScore);
+    var corectAnswer = function(){
+        if(currentQuizData.correct){
+            console.log('true')
+        }
+        else{
+            console.log('false')
+        }
+    }
+}
     
 startBtn.addEventListener('click', function navQuizPage(){
     
@@ -108,28 +116,9 @@ startBtn.addEventListener('click', function navQuizPage(){
     return
 });
 btn1.addEventListener('click', () => {
-    currentQuiz++;
-    const currentQuizData = quizData[currentQuiz];
-    questionNumber.innerHTML = currentQuizData.questionNumber
-    questionEl.innerHTML = currentQuizData.question;
-    btn1.innerHTML = currentQuizData.a
-    btn2.innerHTML = currentQuizData.b
-    btn3.innerHTML = currentQuizData.c
-    btn4.innerHTML = currentQuizData.d
-    answer = currentQuizData.correct
-    console.log(answer)
-    currentScore++;
-    console.log(currentScore)
-
-if(currentQuizData.final === true){
-    homeBtn.addEventListener('click', function navHomePage(){
-        startPage.classList = 'show';
-        questionsPage.classList = 'hidden';
-        scorePage.classList = 'hidden';
-    })
-
+nextQuestion()
 }
-})
+)
 btn2.addEventListener('click', () => {
 nextQuestion()
 })
