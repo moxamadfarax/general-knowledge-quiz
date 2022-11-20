@@ -33,7 +33,7 @@ var quizData = [
         question: 'What is the capital of Austria?',
         a: 'Vienna',
         b: 'Bucharest',
-        c: 'Muncih',
+        c: 'Munich',
         d: 'Venice',
         correct: 'a',
     },
@@ -57,6 +57,7 @@ var quizData = [
     },    
     {
         questionNumber:'Question 5',
+        final: '5',
         question: 'Which of these countries is landlocked?',
         a: 'Jordan',
         b: 'Chad',
@@ -74,21 +75,26 @@ function countDown (){
             startPage.classList = 'hidden';
             scorePage.classList = 'show';
         }
-        timeleft -= 1},  10000);
+        timeleft -= 1},  1000);
 }
 function nextQuestion(){
     currentQuiz++;
     const currentQuizData = quizData[currentQuiz];
-        questionNumber.innerHTML = currentQuizData.questionNumber
-        questionEl.innerHTML = currentQuizData.question;
-        btn1.innerHTML = currentQuizData.a
-        btn2.innerHTML = currentQuizData.b
-        btn3.innerHTML = currentQuizData.c
-        btn4.innerHTML = currentQuizData.d
-        answer = currentQuizData.correct
+    questionNumber.innerHTML = currentQuizData.questionNumber
+    questionEl.innerHTML = currentQuizData.question;
+    btn1.innerHTML = currentQuizData.a
+    btn2.innerHTML = currentQuizData.b
+    btn3.innerHTML = currentQuizData.c
+    btn4.innerHTML = currentQuizData.d
+    answer = currentQuizData.correct
+    console.log(answer)
+    currentScore++;
+    console.log(currentScore)
+    finalQuestion.value = currentQuizData.final
 };
     
 startBtn.addEventListener('click', function navQuizPage(){
+    
     questionsPage.classList = 'show';
     startPage.classList = 'hidden';
     countDown();
@@ -102,22 +108,38 @@ startBtn.addEventListener('click', function navQuizPage(){
     return
 });
 btn1.addEventListener('click', () => {
-    nextQuestion()
-    if(answer = currentQuizData){
-    
-    }
-    
-    
+    currentQuiz++;
+    const currentQuizData = quizData[currentQuiz];
+    questionNumber.innerHTML = currentQuizData.questionNumber
+    questionEl.innerHTML = currentQuizData.question;
+    btn1.innerHTML = currentQuizData.a
+    btn2.innerHTML = currentQuizData.b
+    btn3.innerHTML = currentQuizData.c
+    btn4.innerHTML = currentQuizData.d
+    answer = currentQuizData.correct
+    console.log(answer)
+    currentScore++;
+    console.log(currentScore)
+
+if(currentQuizData.final === true){
+    homeBtn.addEventListener('click', function navHomePage(){
+        startPage.classList = 'show';
+        questionsPage.classList = 'hidden';
+        scorePage.classList = 'hidden';
     })
+
+}
+})
 btn2.addEventListener('click', () => {
 nextQuestion()
 })
 btn3.addEventListener('click', () => {
-    nextQuestion()
+nextQuestion()
 })
 btn4.addEventListener('click', () => {
 nextQuestion()
 })
+console.log(currentQuiz)
 
 scoreBtn.addEventListener('click', function navScorePage(){
     questionsPage.classList = 'hidden';
@@ -160,11 +182,10 @@ function init() {
     }
     renderScoreBox();
 }
-  
 function storeScores() {
     localStorage.setItem("score", JSON.stringify(scores));
 }
-  submitBtn.addEventListener("submit", function(event) {
+submitBtn.addEventListener("submit", function(event) {
     event.preventDefault();
     var scoreText = nameInput.value.trim();
     if (scoreText === "") {
@@ -175,9 +196,8 @@ function storeScores() {
    
     storeScores();
     renderScoreBox();
-  });
-  
-  clearBtn.addEventListener("click", function(event) {
+});
+clearBtn.addEventListener("click", function(event) {
     var element = event.target;
     if (element.matches("button") === true) {
       var index = element.parentElement.getAttribute("data-index");
@@ -186,7 +206,7 @@ function storeScores() {
       storeScores();
       renderScoreBox();
     }
-  });
+});
   
   init();
 
