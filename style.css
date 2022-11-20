@@ -164,6 +164,15 @@ body {
   align-items: center;
   flex-direction: column;
 }
+.score-box li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.score-box li button {
+  background-color: #17e91e;
+}
 .hidden {
   display: none;
 }

@@ -89,12 +89,12 @@
       <main>
         <ul class="column-1">
           <li class="">
-            <form class="form">
+            <form id="score-form" method="POST" class="form">
               <input
                 class="form-input"
                 type="text"
-                id="name-input"
-                name="name"
+                id="score-text"
+                name="score-text"
                 placeholder="Name"
               />
               <input
@@ -109,7 +109,11 @@
         <br />
 
         <div class="score-position">
-          <div class="score-box"></div>
+          <p>
+            Score Count:
+            <span id="score-count">0</span>
+          </p>
+          <div class="score-box" id="score-list"></div>
           <br />
           <div>
             <button class="hidden clear-score-btn">
