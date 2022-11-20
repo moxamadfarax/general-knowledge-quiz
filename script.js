@@ -17,21 +17,33 @@ var timer = document.getElementById('timer')
 var answer = document.querySelectorAll('question-answer');
 var submitScoreBtn = document.getElementById('submit-score-btn')
 var nameInput = document.getElementById('name-input')
-
+var timeleft = 60;
 function countDown (){
-    var timeleft = 60;
     var minuteTimer = setInterval(function(){
-    if(timeleft >= 0){timer.innerHTML ="Timer " + timeleft ;}
-    if(timeleft <= 0){
-    questionsPage.classList = 'hidden';
-    startPage.classList = 'hidden';
-    scorePage.classList = 'show';
+        if(timeleft >= 0){timer.innerHTML ="Timer " + timeleft ;}
+        if(timeleft <= 0){
+            questionsPage.classList = 'hidden';
+            startPage.classList = 'hidden';
+            scorePage.classList = 'show';
+        }
+        timeleft -= 1},  1000);
     }
-    timeleft -= 1},  10);
-}
-
-function nextQuestion(){
-    currentQuiz++;
+    
+    function nextQuestion(){
+        currentQuiz++;
+        var currentQuizData = quizData[currentQuiz];
+        questionNumber.innerHTML = currentQuizData.questionNumber
+        questionEl.innerHTML = currentQuizData.question;
+        btn1.innerHTML = currentQuizData.a
+        btn2.innerHTML = currentQuizData.b
+        btn3.innerHTML = currentQuizData.c
+        btn4.innerHTML = currentQuizData.d
+    };
+    
+startBtn.addEventListener('click', function navQuizPage(){
+    questionsPage.classList = 'show';
+    startPage.classList = 'hidden';
+    countDown();
     var currentQuizData = quizData[currentQuiz];
     questionNumber.innerHTML = currentQuizData.questionNumber
     questionEl.innerHTML = currentQuizData.question;
@@ -39,34 +51,50 @@ function nextQuestion(){
     btn2.innerHTML = currentQuizData.b
     btn3.innerHTML = currentQuizData.c
     btn4.innerHTML = currentQuizData.d
-};
-
-startBtn.addEventListener('click', function navQuizPage(){
-  questionsPage.classList = 'show';
-  startPage.classList = 'hidden';
-  countDown();
-  var currentQuizData = quizData[currentQuiz];
-  questionNumber.innerHTML = currentQuizData.questionNumber
-  questionEl.innerHTML = currentQuizData.question;
-  btn1.innerHTML = currentQuizData.a
-  btn2.innerHTML = currentQuizData.b
-  btn3.innerHTML = currentQuizData.c
-  btn4.innerHTML = currentQuizData.d
+    return
 });
 
 btn1.addEventListener('click', () => {
     nextQuestion()
-    timeleft--;
+    if(btn1 === currentQuiz.correct){
+        score++;
+    } else{
+        sec= -5;
+        timer.innerHTML=  "Timer " + (timeleft + sec)
+        console.log(score)
+    }
 })
 btn2.addEventListener('click', () => {
     nextQuestion()
+    if(btn2 === currentQuiz.correct){
+        score++;
+    } else{
+        sec= -5;
+        timer.innerHTML=  "Timer " + (timeleft + sec)
+        console.log(score)
+    }
 })
 btn3.addEventListener('click', () => {
     nextQuestion()
+    if(btn3 === currentQuiz.correct){
+        score++;
+    } else{
+        sec= -5;
+        timer.innerHTML=  "Timer " + (timeleft + sec)
+        console.log(score)
+    }
 })
 btn4.addEventListener('click', () => {
     nextQuestion()
+    if(btn4 === currentQuiz.correct){
+        score++;
+    } else{
+        sec= -5;
+        timer.innerHTML=  "Timer " + (timeleft + sec)
+        console.log(score)
+    }
 })
+console.log(score)
 
 scoreBtn.addEventListener('click', function navScorePage(){
     questionsPage.classList = 'hidden';
